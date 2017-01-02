@@ -1,4 +1,6 @@
 language: bash
+os:
+  - osx
 script:
     - make install
     - bash test/install.sh
