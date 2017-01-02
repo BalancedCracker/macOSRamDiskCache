@@ -10,8 +10,8 @@ RAMDISK_ROOT="$MOUNTPOINT/$USER"
 
 DISK=$(/usr/bin/hdiutil info|awk "/$RAMDISK_NAME/ { print \$1 }")
 if [ -z "$DISK" ]; then
-  DISK=`/usr/bin/hdiutil attach -nobrowse -nomount ram://2097152`
-  /usr/sbin/diskutil erasevolume HFS+ "RamDiskCache" $DISK
+  DISK=$(/usr/bin/hdiutil attach -nobrowse -nomount ram://2097152)
+  /usr/sbin/diskutil erasevolume HFS+ "${RAMDISK_NAME}" $DISK
 fi
 /usr/bin/chflags hidden $MOUNTPOINT
 
