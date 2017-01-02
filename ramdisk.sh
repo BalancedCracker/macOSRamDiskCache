@@ -19,8 +19,7 @@ function setup_cache_for {
     /bin/mkdir -pv $RAM_CACHE_BASE_DIR/$TARGET
     /bin/ln -v -s $RAM_CACHE_BASE_DIR/$TARGET $USER_LIBRARY_CACHE_BASEDIR/$TARGET
 }
-   
+
 for CACHEDIR in $LIBRARY_TARGET_CACHE_DIRS; do
     setup_cache_for $CACHEDIR
 done
-
