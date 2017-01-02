@@ -6,8 +6,11 @@ USER_LIBRARY_CACHE_BASEDIR=$HOME/Library/Caches
 RAM_CACHE_MOUNT_DIR=/Volumes/RamDiskCache
 RAM_CACHE_BASE_DIR=$RAM_CACHE_MOUNT_DIR/$USER
 
-DISK=`/usr/bin/hdiutil attach -nobrowse -nomount ram://2097152`
-/usr/sbin/diskutil erasevolume HFS+ "RamDiskCache" $DISK
+DISK=$(/usr/bin/hdiutil info|awk '/RamDiskCache/ { print $1 }')
+if [ -z "$DISK" ]; then
+  DISK=`/usr/bin/hdiutil attach -nobrowse -nomount ram://2097152`
+  /usr/sbin/diskutil erasevolume HFS+ "RamDiskCache" $DISK
+fi
 /usr/bin/chflags hidden $RAM_CACHE_MOUNT_DIR
 
 function setup_cache_for {
