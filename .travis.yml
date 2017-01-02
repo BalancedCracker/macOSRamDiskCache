@@ -3,6 +3,7 @@ os:
   - osx
 script:
     - make install
+    - sleep 2
     - bash test/install.sh
     - make uninstall
     - bash test/uninstall.sh
