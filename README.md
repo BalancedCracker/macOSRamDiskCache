@@ -9,7 +9,7 @@ Run at startup to move some app's cache directory be on a RAM disk.
 
 The `make install` command effectively does the following:
 
-    cp launchd.plist to ~/Library/LaunchAgents/macOSRamDiskCache.plist
+    cp launchd.plist ~/Library/LaunchAgents/macOSRamDiskCache.plist
     cp ramdisk.sh /usr/local/bin/macos_ramdisk_cache.sh
     launchctl load -w ~/Library/LaunchAgents/macOSRamDiskCache.plist
 
