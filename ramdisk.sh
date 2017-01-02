@@ -15,10 +15,10 @@ fi
 /usr/bin/chflags hidden $MOUNTPOINT
 
 function setup_cache_for {
-    d=$1
-    /bin/rm -rvf $LIBRARY_CACHES/$d
-    /bin/mkdir -pv $RAMDISK_ROOT/$d
-    /bin/ln -v -s $RAMDISK_ROOT/$d $LIBRARY_CACHES/$d
+  d=$1
+  /bin/rm -rvf $LIBRARY_CACHES/$d
+  /bin/mkdir -pv $RAMDISK_ROOT/$d
+  /bin/ln -v -s $RAMDISK_ROOT/$d $LIBRARY_CACHES/$d
 }
 
 for d in $CACHE_DIRS; do setup_cache_for $d; done
