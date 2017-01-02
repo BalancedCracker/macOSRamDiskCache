@@ -16,3 +16,10 @@ uninstall:
 	  rm -f $(PLIST_PATH); \
 	fi
 	if [ -f $(BIN_PATH) ]; then rm -f $(BIN_PATH); fi
+	for d in `ls /Volumes/RamDiskCache`; do \
+	  if [ -n "${d}" ]; then \
+	  	rm -rf "${HOME}/Library/Caches/${d}"; \
+	  	mkdir -p "${HOME}/Library/Caches/${d}"; \
+	  fi; \
+	done
+	hdiutil detach `hdiutil info|awk '/RamDiskCache/ { print $$1 }'`
