@@ -1,26 +1,26 @@
-ChromeOSXRamDisk
-================
+# macOS RAM-Disk Cache
 
-Run at startup to have Chrome's Cache be in a RamDisk
+Run at startup to move some app's cache directory be on a RAM disk.
 
-Simple Installation
-============
-- Quit Google Chrome
+## Installation
+
+- Quit all apps (see ramdisk.sh)
 - Run `make install`
 
-Manual Installation
-============
-- Copy `com.alanthing.ChromeRamDisk.plist` to ~/Library/LaunchAgents to start on login
-- Copy `ChromeRamDisk.sh` to /usr/local/bin
-- Reboot, or quit Chrome and manually run `/usr/local/bin/ChromeRamDisk.sh`
+The `make install` command effectively does the following:
 
-Uninstall
-============
-- Run `make uninstall`
-- Or...
-  - `rm /usr/local/bin/ChromeRamDisk.sh`
-  - `launchctl unload -w ~/Library/LaunchAgents/com.alanthing.ChromeRamDisk.plist`
-  - `rm ~/Library/LaunchAgents/com.alanthing.ChromeRamDisk.plist`
+    cp launchd.plist to ~/Library/LaunchAgents/macOSRamDiskCache.plist
+    cp ramdisk.sh /usr/local/bin/macos_ramdisk_cache.sh
+    launchctl load -w ~/Library/LaunchAgents/macOSRamDiskCache.plist
 
+## Uninstallation
 
-[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/dcb35e19520f29ae527d047b0c0da4ee "githalytics.com")](http://githalytics.com/alanthing/ChromeOSXRamDisk)
+Run `make uninstall` or do it manually as follows.
+
+    launchctl unload -w ~/Library/LaunchAgents/macOSRamDiskCache.plist
+    rm ~/Library/LaunchAgents/macOSRamDiskCache.plist
+    rm /usr/local/bin/macos_ramdisk_cache.sh
+
+# License
+
+MIT
