@@ -7,7 +7,7 @@ PLIST_PATH = "${HOME}/Library/LaunchAgents/$(PLIST)"
 install:
 	if [ ! -d $(BIN_DIR) ]; then mkdir -p $(BIN_DIR); fi
 	cp ramdisk.sh $(BIN_PATH)
-	cp com.coledot.ChromeRamDisk.plist $(PLIST_PATH)
+	cp launchd.plist $(PLIST_PATH)
 	launchctl load -w $(PLIST_PATH)
 
 uninstall:
