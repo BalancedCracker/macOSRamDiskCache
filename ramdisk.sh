@@ -1,6 +1,7 @@
 #!/bin/bash
 
-CACHE_DIRS='Google/Chrome com.apple.Safari com.apple.iTunes com.spotify.client com.apple.helpd com.apple.dt.Xcode Firefox'
+CACHE_DIRS="Google/Chrome com.apple.Safari com.apple.iTunes com.spotify.client"
+CACHE_DIRS="${CACHE_DIRS} com.apple.helpd com.apple.dt.Xcode Firefox"
 LIBRARY_CACHES=$HOME/Library/Caches
 
 RAMDISK_NAME="RamDiskCache"
