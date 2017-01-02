@@ -1,4 +1,4 @@
-# macOS RAM-Disk Cache
+# macOS RAM-Disk Cache [![Build Status](https://travis-ci.org/glaszig/macOSRamDiskCache.svg?branch=master)](https://travis-ci.org/glaszig/macOSRamDiskCache)
 
 Run at startup to move some app's cache directory be on a RAM disk.
 
