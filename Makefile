@@ -1,7 +1,7 @@
 BIN_DIR = /usr/local/bin
 BIN = macos_ramdisk_cache.sh
 BIN_PATH = "$(BIN_DIR)/$(BIN)"
-PLIST = com.coledot.ChromeRamDisk.plist
+PLIST = macOSRamDiskCache.plist
 PLIST_PATH = "${HOME}/Library/LaunchAgents/$(PLIST)"
 
 install:
