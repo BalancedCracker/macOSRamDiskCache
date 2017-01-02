@@ -1,0 +1,6 @@
+language: bash
+script:
+    - make install
+    - bash test/install.sh
+    - make uninstall
+    - bash test/uninstall.sh
